@@ -32,9 +32,9 @@ const App = () => {
 
     }, []);
 
-    return(
+    return (
         <div className="app">
-            <h1>MovieLand</h1>
+            <h1>Find Movies</h1>
 
             <div className="search">
                 <input
@@ -45,30 +45,30 @@ const App = () => {
                 <img
                     src={SearchIcon}
                     alt="search"
-                    onClick={() =>searchMovies(searchTerm)}
+                    onClick={() => searchMovies(searchTerm)}
                 />
-                </div>
+            </div>
 
-                    {
-                      movies?.length  > 0
-                       ? (
-                        <div className= "container" >
-                             {movies.map((movie) => (
+            {
+                movies?.length > 0
+                    ? (
+                        <div className="container" >
+                            {movies.map((movie) => (
                                 <MovieCard movie={movie} />
-                             ))}
+                            ))}
                         </div>
-            
-                       ) :
-                       (
+
+                    ) :
+                    (
                         <div className='empty'>
                             <h2>no movie found</h2>
                         </div>
-                       )
-                    }
+                    )
+            }
 
-                
-            </div>
-    
+
+        </div>
+
     );
 }
 
